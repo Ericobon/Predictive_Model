@@ -37,3 +37,11 @@ In this step, I built a few different candidate models and compared different me
 
 Feature selection was refined using the Random Forest algorithm to identify the most influential factors and by analyzing the correlation matrix variables to ensure relevance and impact on the model's predictive capabilities.
 
+## Model Performance
+The XGB model not far outperformed the other approaches on the test and validation sets.
+* XGB Regressor : R²: 0.88 and RMSE = 284.08
+* Gradient Bosting: R²: 0.88 RMSE = 286.54
+* Random Forest Regressor: R²: 0.88 RMSE = 290.74
+
+The final XGB model was then trained on the whole training dataset using the hyperparameters found in
+
