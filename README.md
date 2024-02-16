@@ -27,7 +27,6 @@ Out of the 5,574 observations in the model (cities in Brazil), only 1,576 were u
 I made the following changes and created the following variables:
 * An 75/25 train/test split was used and as my data contained dates, the most recent 25% of the data became the test set.
 * Any missing values in a categorical feature were assigned a new category 'NONE' and missing values in numeric features were imputed using the median. Some heuristic functions were also used to impute systematic missing values. 
-* One-hot-encoding was used to encode categorical features and ordinal encoding was used to encode ordinal features. Target encoding was also used for a few categorical features. 
 
 ## Model Building 
 In this step, I built a few different candidate models and compared different metrics to determine which was the best model for deployment. Three of those models were:
@@ -36,6 +35,8 @@ In this step, I built a few different candidate models and compared different me
 * XGBRegressor - Well... this model just always seems to work.
 
 Feature selection was refined using the Random Forest algorithm to identify the most influential factors and by analyzing the correlation matrix variables to ensure relevance and impact on the model's predictive capabilities.
+
+![Feature Importance and Correlation Matrix](images1/FEATURE_IMPORTANCE.png)
 
 ## Model Performance
 The XGBoost model displayed strong performance, showing a lower RMSE on the test set, indicating precise predictions. The Gradient Boosting model, however, demonstrated superior performance during the learning curve validation, yielding the smallest error at the curve's end. This suggests that while XGBoost was more accurate for the given test data, Gradient Boosting may generalize better when applied to new data.
@@ -52,6 +53,7 @@ The XGBoost model displayed strong performance, showing a lower RMSE on the test
 * Random Forest: The largest error, which might indicate overfitting or less generalizability compared to the other models.
 
 This evaluation underscores the importance of not only considering the RMSE but also the model's ability to generalize, as evidenced by the learning curves. While RMSE is vital for understanding model accuracy on the test set, the learning curve provides insights into how well the model might perform on unseen data.
+![Learning Curve](images1/LEARNING_CURVE.png)
 
 ## Final Model Output
 
@@ -69,4 +71,11 @@ This evaluation underscores the importance of not only considering the RMSE but 
 * XGBoost: 96.364791119643
 * Gradient Boosting: 84.94589643601105
 * Random Forest: 275.31088576155446
+
+  ![Gradient Bosting](images1/GB.png)
+  ![XgBoost](images1/GB.png)
+  ![Random Forest](images1/GB.png)
+
+## JUPYTER NOTEBOOK  
+For detailed analysis and predictive modeling, see the [Predictive Model Jupyter Notebook](/path/to/predictive-model-notebook.ipynb).
 
