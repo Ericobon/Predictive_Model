@@ -1,2 +1,1 @@
-# Predictive_Model
-Predictive Model for Higher Education Entrants
+# Predictive Model for Higher Education Entrants
