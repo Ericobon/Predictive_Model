@@ -38,10 +38,33 @@ In this step, I built a few different candidate models and compared different me
 Feature selection was refined using the Random Forest algorithm to identify the most influential factors and by analyzing the correlation matrix variables to ensure relevance and impact on the model's predictive capabilities.
 
 ## Model Performance
-The XGB model not far outperformed the other approaches on the test and validation sets.
-* XGB Regressor : R²: 0.88 and RMSE = 284.08
-* Gradient Bosting: R²: 0.88 RMSE = 286.54
-* Random Forest Regressor: R²: 0.88 RMSE = 290.74
+The XGBoost model displayed strong performance, showing a lower RMSE on the test set, indicating precise predictions. The Gradient Boosting model, however, demonstrated superior performance during the learning curve validation, yielding the smallest error at the curve's end. This suggests that while XGBoost was more accurate for the given test data, Gradient Boosting may generalize better when applied to new data.
 
-The final XGB model was then trained on the whole training dataset using the hyperparameters found in
+After Tuning hyperparameters
+XGBoost Regressor: R²: 0.88, RMSE: 284.08
+Gradient Boosting: R²: 0.88, RMSE: 286.54
+Random Forest Regressor: R²: 0.88, RMSE: 290.74
+Cross-validation error at the end of the learning curve:
+
+Gradient Boosting: The smallest cross-validation error, suggesting robust performance across different datasets.
+XGBoost: Slightly higher error, but very close in performance to Gradient Boosting.
+Random Forest: The largest error, which might indicate overfitting or less generalizability compared to the other models.
+This evaluation underscores the importance of not only considering the RMSE but also the model's ability to generalize, as evidenced by the learning curves. While RMSE is vital for understanding model accuracy on the test set, the learning curve provides insights into how well the model might perform on unseen data.
+
+## Final Model Output
+
+Erro Médio Absoluto (MAE):
+XGBoost: 40.71038869001921
+Gradient Boosting: 28.578969932587995
+Random Forest: 49.60154284969409
+
+Erro Quadrático Médio (MSE):
+XGBoost: 9286.172967532426
+Gradient Boosting: 7215.805321317515
+Random Forest: 75796.08381881168
+
+Raiz do Erro Quadrático Médio (RMSE):
+XGBoost: 96.364791119643
+Gradient Boosting: 84.94589643601105
+Random Forest: 275.31088576155446
 
