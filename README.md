@@ -76,6 +76,8 @@ This evaluation underscores the importance of not only considering the RMSE but 
   ![XgBoost](images1/GB.png)
   ![Random Forest](images1/GB.png)
 
-## JUPYTER NOTEBOOK  
-For detailed analysis and predictive modeling, see the [Predictive Model Jupyter Notebook](Notebooks/predictive-model-notebook.ipynb).
+## In-Depth Analysis Notebook 
+
+Explore the comprehensive data analysis and the predictive model's inner workings in the [Notebook: Predictive Model Deep Dive](Notebooks/predictive-model-notebook.ipynb).
+
 
