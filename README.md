@@ -21,18 +21,19 @@ In line with my commitment to transparency and the principles of open science, t
 * Demographic and Socioeconomic: [IBGE](https://www.ibge.gov.br/estatisticas/sociais/populacao/22827-censo-demografico-2022.html?edicao=37225&t=resultados)
 
 ## Preprocessing and Feature Engineering
-After obtaining the data, I needed to clean it up so that it was usable for my model. I made the following changes and created the following variables:
-* 
+After obtaining the data, I needed to clean it up so that it was usable for my model.
+
+Out of the 5,574 observations in the model (cities in Brazil), only 1,576 were used for training and testing. This subset corresponds to the cities where Company Y has a presence, which was intentionally selected to understand the characteristics influencing the target variable. This targeted approach in feature engineering was aimed at gaining insights from the most relevant data that could accurately predict outcomes in similar demographic and market conditions.
+I made the following changes and created the following variables:
 * An 75/25 train/test split was used and as my data contained dates, the most recent 25% of the data became the test set.
 * Any missing values in a categorical feature were assigned a new category 'NONE' and missing values in numeric features were imputed using the median. Some heuristic functions were also used to impute systematic missing values. 
 * One-hot-encoding was used to encode categorical features and ordinal encoding was used to encode ordinal features. Target encoding was also used for a few categorical features. 
 
 ## Model Building 
 In this step, I built a few different candidate models and compared different metrics to determine which was the best model for deployment. Three of those models were:
-* Dummy Classifier (simply returns average kudos) - Baseline for the model.
-* Lasso Regression - Because of the sparse data from the many categorical variables, I thought a normalized regression like lasso would be effective.
-* Random Forest - Again, with the sparsity associated with the data, I thought that this would be a good fit.
+* Random Forest - Because of the sparse data from the many categorical variables, I thought that this would be a good fit.
+* Gradient Bosting - Again, with the sparsity associated with the data, I thought that this would be a good fit.
 * XGBRegressor - Well... this model just always seems to work.
 
-Feature selection was performed using a mix of SHAP values and feature importance from XGB
+Feature selection was refined using the Random Forest algorithm to identify the most influential factors and by analyzing the correlation matrix variables to ensure relevance and impact on the model's predictive capabilities.
 
