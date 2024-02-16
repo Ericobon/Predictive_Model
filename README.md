@@ -41,7 +41,7 @@ Feature selection was refined using the Random Forest algorithm to identify the 
 ## Model Performance
 The XGBoost model displayed strong performance, showing a lower RMSE on the test set, indicating precise predictions. The Gradient Boosting model, however, demonstrated superior performance during the learning curve validation, yielding the smallest error at the curve's end. This suggests that while XGBoost was more accurate for the given test data, Gradient Boosting may generalize better when applied to new data.
 
-**After Tuning hyperparameters**
+**Post-Hyperparameter Tuning Performance:**
 * XGBoost Regressor: R²: 0.88, RMSE: 284.08
 * Gradient Boosting: R²: 0.88, RMSE: 286.54
 * Random Forest Regressor: R²: 0.88, RMSE: 290.74
